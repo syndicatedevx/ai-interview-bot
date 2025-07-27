@@ -3,6 +3,19 @@ import React from "react";
 
 export default function Auth() {
   const navigate = useNavigate();
+  const [formData, setFormData] = React.useState({
+    email: '',
+    password: '',
+    rememberMe: false
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -13,7 +26,7 @@ export default function Auth() {
   return (
     <section className="w-200 ml-55 mt-3 rounded-2xl backdrop-blur-lg bg-white/10 p-8 border border-white/20 shadow-xl">
       <h2 className="text-2xl font-bold mb-6 flex items-center">
-        <span className="material-symbols-outlined mr-2"></span>
+        <span className="material-symbols-outlined mr-2">login</span>
         Login
       </h2>
       <div className="relative backdrop-blur-md bg-white/5 rounded-xl p-8 border border-white/20 transition-all duration-300 hover:shadow-[0_0_15px_rgba(147,197,253,0.3)] hover:border-blue-300/40 max-w-md mx-auto">
@@ -23,7 +36,15 @@ export default function Auth() {
         <form className="space-y-4" onSubmit={handleLogin}>
           <div className="space-y-2">
             <label className="block text-sm font-medium text-blue-100">Email Address</label>
-            <input type="email" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 text-white" placeholder="name@company.com" />
+            <input 
+              type="email" 
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 text-white" 
+              placeholder="name@company.com" 
+              required
+            />
           </div>
           <div className="space-y-2">
             <div className="flex justify-between items-center">
@@ -32,15 +53,33 @@ export default function Auth() {
                 Forgot Password?
               </a>
             </div>
-            <input type="password" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 text-white" placeholder="••••••••" />
+            <input 
+              type="password" 
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/10 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 text-white" 
+              placeholder="••••••••" 
+              required
+            />
           </div>
           <div className="flex items-center">
-            <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-blue-500 focus:ring-blue-400" />
+            <input 
+              id="remember-me" 
+              name="rememberMe" 
+              type="checkbox" 
+              checked={formData.rememberMe}
+              onChange={handleInputChange}
+              className="h-4 w-4 rounded border-gray-300 text-blue-500 focus:ring-blue-400" 
+            />
             <label htmlFor="remember-me" className="ml-2 block text-sm text-blue-100">
               Remember me
             </label>
           </div>
-          <button type="submit" className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:translate-y-[-2px] cursor-pointer">Log In</button>
+          <button type="submit" className="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:translate-y-[-2px] cursor-pointer flex items-center justify-center">
+            <span className="material-symbols-outlined mr-2">login</span>
+            Log In
+          </button>
         </form>
         <div className="mt-6 text-center text-sm">
           <span className="text-blue-100">Don't have an account?</span>

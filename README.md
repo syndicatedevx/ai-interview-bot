@@ -1,7 +1,90 @@
-AI-Interview Bot
-# Welcome to React Router!
+# AI Interview Bot
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, polished AI-powered interview application built with React Router and TypeScript. This application provides a complete interview experience from resume upload to AI-powered interviews.
+
+## ✨ Features
+
+- 🔐 **Authentication System** - Login and signup with form validation
+- 📄 **Resume Upload** - Drag & drop resume upload with preview
+- 📅 **Interview Scheduling** - Functional calendar with date selection and time slots
+- 🤖 **AI Interview Chatbot** - Interactive AI interviewer with progress tracking
+- 🎨 **Modern UI/UX** - Glassmorphism design with smooth animations
+- 📱 **Responsive Design** - Works on desktop and mobile devices
+- 🔄 **Navigation** - Intuitive back/next navigation between screens
+
+## 🚀 Getting Started
+
+### Installation
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### Development
+
+Start the development server with HMR:
+
+```bash
+npm run dev
+```
+
+Your application will be available at `http://localhost:5173`.
+
+## 🎯 Application Flow
+
+1. **Login/Signup** - User authentication with form validation
+2. **Home** - Resume upload and preview with drag & drop functionality
+3. **Schedule** - Interactive calendar for interview scheduling
+4. **Chatbot** - AI-powered interview with progress tracking
+
+## 🛠️ Technical Stack
+
+- **Frontend**: React 19, TypeScript, Tailwind CSS
+- **Routing**: React Router v7
+- **Styling**: Glassmorphism design with custom gradients
+- **Icons**: Material Symbols
+- **Build Tool**: Vite
+
+## 🎨 UI Components
+
+- **Glassmorphism Cards** - Semi-transparent cards with backdrop blur
+- **Gradient Buttons** - Beautiful gradient buttons with hover effects
+- **Interactive Calendar** - Functional calendar with date selection
+- **Progress Indicators** - Visual progress tracking for interviews
+- **Custom Scrollbars** - Styled scrollbars for better UX
+
+## 📦 Building for Production
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## 🐳 Docker Deployment
+
+To build and run using Docker:
+
+```bash
+docker build -t ai-interview-bot .
+
+# Run the container
+docker run -p 3000:3000 ai-interview-bot
+```
+
+## 🔧 Backend Integration Ready
+
+The frontend is fully prepared for backend integration with:
+- Form validation and state management
+- Navigation flow between screens
+- UI components ready for API integration
+- Proper TypeScript types and interfaces
+
+---
+
+Built with ❤️ using React Router and modern web technologies.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
