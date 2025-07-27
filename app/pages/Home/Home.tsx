@@ -13,21 +13,21 @@ export default function Home() {
   const navigate = useNavigate();
   return (
     <div className="relative min-h-screen">
-      <div className="absolute top-8 left-8 z-20">
+      <div className="absolute top-8 right-8 z-20 flex space-x-3">
         <button 
-          className="py-2 px-4 rounded-lg bg-gradient-to-r from-gray-500 to-gray-600 text-white font-medium shadow-lg shadow-gray-500/30 hover:shadow-gray-500/50 transition-all duration-300 hover:translate-y-[-2px] cursor-pointer flex items-center"
+          className="py-2 px-4 rounded-lg bg-gradient-to-r from-red-500 to-red-600 text-white font-medium shadow-lg shadow-red-500/30 hover:shadow-red-500/50 transition-all duration-300 hover:translate-y-[-2px] cursor-pointer flex items-center"
           onClick={() => navigate("/")}
         >
-          <span className="material-symbols-outlined mr-2">arrow_back</span>
+          <span className="material-symbols-outlined mr-2">logout</span>
           Logout
         </button>
+        <button className="py-2 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:translate-y-[-2px] cursor-pointer flex items-center"
+          onClick={() => navigate("/schedule")}
+        >
+          <span className="material-symbols-outlined mr-2">schedule</span>
+          Schedule Interview
+        </button>
       </div>
-      <button className="absolute top-8 right-8 z-20 py-2 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 hover:translate-y-[-2px] cursor-pointer flex items-center"
-        onClick={() => navigate("/schedule")}
-      >
-        <span className="material-symbols-outlined mr-2">schedule</span>
-        Schedule Interview
-      </button>
       <section className="rounded-2xl backdrop-blur-lg bg-white/10 p-8 border border-white/20 shadow-xl z-10">
               <h2 className="text-2xl font-bold mb-6 flex items-center">
         <span className="material-symbols-outlined mr-2">upload_file</span>
